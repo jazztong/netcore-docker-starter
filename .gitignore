@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+.terraform
+.terraform.tfstate*
+terraform.tfstate.*
+*.pem
