@@ -32,3 +32,4 @@ fmt:
 
 kill:
 	terraform destroy -auto-approve ${INFRA_PATH}
+	rm -f key.pem

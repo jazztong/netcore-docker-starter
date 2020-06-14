@@ -9,6 +9,9 @@ yum install -y docker amazon-ecr-credential-helper
 # Add credential helper to pull from ECR
 mkdir -p ~/.docker && chmod 0700 ~/.docker
 echo '{"credsStore": "ecr-login"}' > ~/.docker/config.json
+# Add credential helper to pull from ECR allow from ec2-user
+mkdir -p /home/ec2-user/.docker
+echo '{"credsStore": "ecr-login"}' > /home/ec2-user/.docker/config.json
 # Start docker now and enable auto start on boot
 service docker start && chkconfig docker on
 # Allow the ec2-user to run docker commands without sudo
